@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Room — Kokopo Stay</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 64 64"><defs><linearGradient id="kgNav3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a855f7"/><stop offset="1" stop-color="#2e1065"/></linearGradient></defs>
+        <circle cx="32" cy="32" r="32" fill="url(#kgNav3)"/><circle cx="46" cy="18" r="4" fill="#cba135"/>
+        <g fill="#ffffff" opacity="0.95">
+          <path d="M32,46 C27,37 24,29 17,23 C26,25 33,31 32,46 Z"/><path d="M32,46 C29,36 29,27 24,18 C31,22 35,30 32,46 Z"/>
+          <path d="M32,46 C32,35 32,25 32,15 C36,23 36,35 32,46 Z"/><path d="M32,46 C35,36 35,27 40,18 C33,22 29,30 32,46 Z"/>
+          <path d="M32,46 C37,37 40,29 47,23 C38,25 31,31 32,46 Z"/>
+        </g>
+        <path d="M32,46 C30,50 30,54 32,58" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="nav-logo-text">Kokopo Stay<small>Beachfront Hotel</small></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+      <li><a href="amenities.html">Amenities</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About &amp; Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right"><a href="book.html" class="btn btn-outline-dark">Book Now</a></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="tag">Reservations</span>
+    <h1>Book a Room</h1>
+    <p>Fill in your details below and we'll hold your room. This demo form does not process a real booking.</p>
+    <div class="crumb"><a href="index.html">Home</a> / Book a Room</div>
+  </div>
+</section>
+
+<section>
+  <div class="booking-panel">
+    <h3 style="margin-bottom:22px;">Reservation Details</h3>
+    <form id="bookingForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="bf-name">Full Name</label>
+          <input type="text" id="bf-name" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="bf-email">Email Address</label>
+          <input type="email" id="bf-email" placeholder="you@example.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="bf-phone">Phone Number</label>
+          <input type="tel" id="bf-phone" placeholder="+675 ...">
+        </div>
+        <div class="form-group">
+          <label for="bf-room">Room Type</label>
+          <select id="bf-room" required>
+            <option value="garden">Garden View Room — K380/night</option>
+            <option value="ocean">Ocean View Suite — K560/night</option>
+            <option value="family">Family Bungalow — K720/night</option>
+            <option value="presidential">Presidential Suite — K1,150/night</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="bf-checkin">Check-In Date</label>
+          <input type="date" id="bf-checkin" required>
+        </div>
+        <div class="form-group">
+          <label for="bf-checkout">Check-Out Date</label>
+          <input type="date" id="bf-checkout" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="bf-guests">Number of Guests</label>
+          <select id="bf-guests">
+            <option>1</option>
+            <option selected>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bf-payment">Payment Preference</label>
+          <select id="bf-payment">
+            <option>Pay at Hotel</option>
+            <option>Bank Transfer</option>
+            <option>Card on Arrival</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group full">
+          <label for="bf-requests">Special Requests (optional)</label>
+          <textarea id="bf-requests" placeholder="Airport pickup, dietary needs, early check-in, etc."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Confirm Reservation</button>
+    </form>
+
+    <div class="confirm-box" id="confirmBox">
+      <h3>Thank you — your request has been received!</h3>
+      <p><strong>Name:</strong> <span id="confirm-name"></span></p>
+      <p><strong>Room:</strong> <span id="confirm-room"></span></p>
+      <p><strong>Dates:</strong> <span id="confirm-dates"></span></p>
+      <p><strong>Guests:</strong> <span id="confirm-guests"></span></p>
+      <p class="confirm-note">This is a demo booking form — no real reservation has been made and no email has been sent.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">
+        <svg viewBox="0 0 64 64"><defs><linearGradient id="kgFoot3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a855f7"/><stop offset="1" stop-color="#2e1065"/></linearGradient></defs>
+          <circle cx="32" cy="32" r="32" fill="url(#kgFoot3)"/><circle cx="46" cy="18" r="4" fill="#cba135"/>
+          <g fill="#ffffff" opacity="0.95">
+            <path d="M32,46 C27,37 24,29 17,23 C26,25 33,31 32,46 Z"/><path d="M32,46 C29,36 29,27 24,18 C31,22 35,30 32,46 Z"/>
+            <path d="M32,46 C32,35 32,25 32,15 C36,23 36,35 32,46 Z"/><path d="M32,46 C35,36 35,27 40,18 C33,22 29,30 32,46 Z"/>
+            <path d="M32,46 C37,37 40,29 47,23 C38,25 31,31 32,46 Z"/>
+          </g>
+          <path d="M32,46 C30,50 30,54 32,58" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="footer-logo-text">Kokopo Stay</span>
+      </div>
+      <p>Rugen Harbourside, Kokopo, East New Britain, Papua New Guinea.</p>
+      <p>A fictional hotel demo built by Tesseract Cloud Technologies.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul class="footer-links">
+        <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+        <li><a href="amenities.html">Amenities</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About &amp; Reviews</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="tel:+675123456">+675 123 456</a></li>
+        <li><a href="mailto:stay@kokopostay.com">stay@kokopostay.com</a></li>
+        <li><a href="book.html">Book a Room</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">Fictional property created to showcase Tesseract Cloud Technologies' web design work. &copy; 2026 Kokopo Stay.</div>
+</footer>
+<a href="https://demo.tesseract-pg.com/" class="fab-home" aria-label="Back to Showcase">
+  <img src="tctd_icon.png" alt="Back to Showcase">
+  <span class="fab-tooltip">Back to Showcase</span>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
